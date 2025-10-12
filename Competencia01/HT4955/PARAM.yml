@@ -1,0 +1,252 @@
+experimento: 4955.0
+semilla_primigenia: 909091.0
+train:
+- 202101.0
+- 202102.0
+- 202103.0
+train_final:
+- 202101.0
+- 202102.0
+- 202103.0
+future: 202104.0
+semilla_kaggle: 314159.0
+cortes:
+- 6000.0
+- 6200.0
+- 6400.0
+- 6600.0
+- 6800.0
+- 7000.0
+- 7200.0
+- 7400.0
+- 7600.0
+- 7800.0
+- 8000.0
+- 8200.0
+- 8400.0
+- 8600.0
+- 8800.0
+- 9000.0
+- 9200.0
+- 9400.0
+- 9600.0
+- 9800.0
+- 10000.0
+- 10200.0
+- 10400.0
+- 10600.0
+- 10800.0
+- 11000.0
+- 11200.0
+- 11400.0
+- 11600.0
+- 11800.0
+- 12000.0
+- 12200.0
+- 12400.0
+- 12600.0
+- 12800.0
+- 13000.0
+- 13200.0
+- 13400.0
+- 13600.0
+- 13800.0
+- 14000.0
+- 14200.0
+- 14400.0
+- 14600.0
+- 14800.0
+- 15000.0
+- 15200.0
+- 15400.0
+- 15600.0
+- 15800.0
+- 16000.0
+- 16200.0
+- 16400.0
+- 16600.0
+- 16800.0
+- 17000.0
+- 17200.0
+- 17400.0
+- 17600.0
+- 17800.0
+- 18000.0
+- 18200.0
+- 18400.0
+- 18600.0
+- 18800.0
+- 19000.0
+trainingstrategy:
+  undersampling: 0.02
+hyperparametertuning:
+  xval_folds: 5.0
+  iteraciones: 35.0
+lgbm:
+  param_fijos:
+    boosting: gbdt
+    objective: binary
+    metric: auc
+    first_metric_only: no
+    boost_from_average: yes
+    feature_pre_filter: no
+    force_row_wise: yes
+    verbosity: -100.0
+    num_threads: 4.0
+    seed: 909091.0
+    max_depth: -1
+    min_gain_to_split: 0.2
+    min_sum_hessian_in_leaf: 0.001
+    lambda_l1: 0.0
+    lambda_l2: 0.0
+    max_bin: 31
+    bagging_fraction: 1.0
+    bagging_freq: 1.0
+    pos_bagging_fraction: 1.0
+    neg_bagging_fraction: 1.0
+    is_unbalance: yes
+    scale_pos_weight: 1.0
+    drop_rate: 0.1
+    max_drop: 50.0
+    skip_drop: 0.5
+    extra_trees: yes
+    num_iterations: 1200.0
+    learning_rate: 0.02
+    feature_fraction: 0.5
+    num_leaves: 750.0
+hypeparametertuning:
+  hs:
+    pars:
+      path_smooth:
+        id: path_smooth
+        type: numeric
+        len: 1
+        lower: 0.5
+        upper: 50.0
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      learning_rate:
+        id: learning_rate
+        type: numeric
+        len: 1
+        lower: 0.01
+        upper: 0.1
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      feature_fraction:
+        id: feature_fraction
+        type: numeric
+        len: 1
+        lower: 0.5
+        upper: 1.0
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      num_leaves:
+        id: num_leaves
+        type: integer
+        len: 1
+        lower: 8
+        upper: 3000
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      min_data_in_leaf:
+        id: min_data_in_leaf
+        type: integer
+        len: 1
+        lower: 100
+        upper: 850
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      bagging_fraction:
+        id: bagging_fraction
+        type: numeric
+        len: 1
+        lower: 0.5
+        upper: 1.0
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      bagging_freq:
+        id: bagging_freq
+        type: integer
+        len: 1
+        lower: 1.0
+        upper: 20.0
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+      min_gain_to_split:
+        id: min_gain_to_split
+        type: numeric
+        len: 1
+        lower: 0.01
+        upper: 20.0
+        values: ~
+        cnames: ~
+        allow.inf: no
+        has.default: no
+        default: ~
+        trafo: ~
+        requires: ~
+        tunable: yes
+        special.vals: []
+    forbidden: ~
+out:
+  lgbm:
+    mejores_hiperparametros:
+      path_smooth: 0.7306278
+      learning_rate: 0.0312317
+      feature_fraction: 0.7972301
+      num_leaves: 1631
+      min_data_in_leaf: 100
+      bagging_fraction: 0.9572133
+      bagging_freq: 11
+      min_gain_to_split: 0.013207
+    'y': 0.9367839
