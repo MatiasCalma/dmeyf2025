@@ -1,0 +1,13 @@
+- el resultado final es un ensamble de 3 zlgbm, con semillerios de 20.
+
+- Estos tienen 2 tipos de tratamiento de data drifting (UVA o IPC), eliminando en todos prestamos_personales, pero en IPC v5, además elimino cdescubierto_preacordado, mcaja_ahorro, ccaja_ahorro. Estas salieron importantes en una bayesiana corrida el dia 13/11/2025. Era otro dataset, pero probé quitarlas.
+
+- Se quitan los ceros por nulos en los meses con variables rotas.
+
+- Para FE, primero realizamos la suma de las variables de montos, de conteos, y su división, los random forest se acotan solo al conteo de veces que cae en cada hoja el registro (de 320, a 16 variables), creo una variable para tomar en cuenta dispersión de las variables llamada "eficiencia" (promedio móvil²/(desvio móvil ² + promedio móvil²)).
+
+- Para el histórico, se toma lags y deltas de orden 2, tendencias y promedios móviles de 6 meses (este ultimo necesario para hacer la variable eficiencia).
+
+- Para el modelado final, se perturban a los 3 zlgbm para realizar el semillerio de 20, se entrena en todos de 201901 a 202106 con undersampling de CONTINUA del 10% (los testeos se hicieron al 5%).
+
+- La conclusión final es, me tiro un piletazo con esto.
