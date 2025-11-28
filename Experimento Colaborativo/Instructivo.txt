@@ -1,0 +1,80 @@
+Las semillas primigenias corridas son: 202021, 170029, 100003, 990013 
+
+Para cambiar el tratamiento del drifting, modificar deflactor.
+
+En total, cada notebook tardaría entre 15 y 20 minutos.
+
+Los resultados de las corridas están disponibles en --> https://docs.google.com/spreadsheets/d/1h1A77ehLOI2p2lPMMrlqV4aFbtdOOGEPl5M7Z6LBpA0/edit?usp=sharing
+
+Para realizar las validaciones en diferentes meses, cambiar la estrategia de entrenamiento:
+
+---------------------------------------------------------------------------
+
+PARA JUNIO:
+PARAM$train_final$future <- c(202106)
+
+PARAM$train_final$training <- c(
+  201901, 201902, 201903, 201904, 201905, 201906,
+  201907, 201908, 201909, 201910, 201911, 201912,
+  202001, 202002, 202003, 202004, 202005, 202006,
+  202007, 202008, 202009, 202010, 202011, 202012,
+  202101, 202102, 202103, 202104
+)
+
+PARAM$train_final$undersampling <- 0.05
+
+---------------------------------------------------------------------------
+PARA MAYO:
+
+PARAM$train_final$future <- c(202105)
+
+PARAM$train_final$training <- c(
+  201901, 201902, 201903, 201904, 201905, 201906,
+  201907, 201908, 201909, 201910, 201911, 201912,
+  202001, 202002, 202003, 202004, 202005, 202006,
+  202007, 202008, 202009, 202010, 202011, 202012,
+  202101, 202102, 202103
+)
+
+PARAM$train_final$undersampling <- 0.05
+---------------------------------------------------------------------------
+PARA ABRIL:
+
+PARAM$train_final$future <- c(202104)
+
+PARAM$train_final$training <- c(
+  201901, 201902, 201903, 201904, 201905, 201906,
+  201907, 201908, 201909, 201910, 201911, 201912,
+  202001, 202002, 202003, 202004, 202005, 202006,
+  202007, 202008, 202009, 202010, 202011, 202012,
+  202101, 202102
+)
+
+PARAM$train_final$undersampling <- 0.05
+---------------------------------------------------------------------------
+PARA MARZO:
+
+PARAM$train_final$future <- c(202103)
+
+PARAM$train_final$training <- c(
+  201901, 201902, 201903, 201904, 201905, 201906,
+  201907, 201908, 201909, 201910, 201911, 201912,
+  202001, 202002, 202003, 202004, 202005, 202006,
+  202007, 202008, 202009, 202010, 202011, 202012,
+  202101
+)
+
+PARAM$train_final$undersampling <- 0.05
+---------------------------------------------------------------------------
+PARA DICIEMBRE:
+
+PARAM$train_final$future <- c(202012)
+
+PARAM$train_final$training <- c(
+  201901, 201902, 201903, 201904, 201905, 201906,
+  201907, 201908, 201909, 201910, 201911, 201912,
+  202001, 202002, 202003, 202004, 202005, 202006,
+  202007, 202008, 202009, 202010
+)
+
+PARAM$train_final$undersampling <- 0.05
