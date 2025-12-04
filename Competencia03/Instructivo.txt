@@ -1,0 +1,3 @@
+La predicción final es un ensamble de 3 modelos. 
+Estos están en la carpeta Notebooks, que generan los archivos en Predicciones, y se ensamblan usando el notebook Ensambles.
+Este genera el archivo final enviado clientes_ensamble_86a_80a_80b. 
